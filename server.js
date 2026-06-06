@@ -42,3 +42,10 @@ app.listen(PORT, () => {
 })
 
 export default app
+// TEMP: raw db viewer (remove before final submission)
+app.get('/api/debug/tables', (_req, res) => {
+  const items    = db.prepare('SELECT * FROM items').all()
+  const bookings = db.prepare('SELECT * FROM bookings').all()
+  const users    = db.prepare('SELECT id, email, name, role FROM users').all()
+  res.json({ items, bookings, users })
+})
