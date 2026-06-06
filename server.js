@@ -3,7 +3,7 @@ import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
 import { attachUser } from './middleware/auth.js'
-import './db.js'                       // ensures DB is created + seeded on boot
+import { db } from './db.js'                     // ensures DB is created + seeded on boot
 import itemsRouter    from './routes/items.js'
 import bookingsRouter from './routes/bookings.js'
 import authRouter     from './routes/auth.js'
